@@ -162,9 +162,19 @@ function inputs() {
 }
 
 document.querySelector(".width-input").addEventListener("change", (event) => {
-  cont.style.width = `${Number(event.target.value)}px`;
+  if (!isNaN(event.target.value)) {
+    cont.style.width = `${Number(event.target.value)}px`;
+  } else {
+    alert("Please specify a valid number!");
+    event.target.value = "";
+  }
 });
 
 document.querySelector(".height-input").addEventListener("change", (event) => {
-  cont.style.height = `${Number(event.target.value)}px`;
+  if (!isNaN(event.target.value)) {
+    cont.style.height = `${Number(event.target.value)}px`;
+  } else {
+    alert("Please specify a valid number!");
+    event.target.value = "";
+  }
 });
