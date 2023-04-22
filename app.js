@@ -105,13 +105,17 @@ function resetCard() {
 }
 
 // 10 second timer to change card
-window.setInterval(function () {
+let myTimer = window.setInterval(interval, 10000);
+
+function interval() {
   resetCard();
-}, 10000);
+}
 
 // Change card when click on button
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("btn")) {
     resetCard();
   }
+  clearInterval(myTimer);
+  myTimer = setInterval(interval, 10000);
 });
