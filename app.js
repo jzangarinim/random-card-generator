@@ -95,13 +95,23 @@ function buttonStyles() {
   div.style.borderRadius = "10px";
 }
 
+function resetCard() {
+  randIcon = Math.floor(Math.random() * icons.length);
+  randValue = Math.floor(Math.random() * values.length);
+  stampOne.textContent = icons[randIcon];
+  stampTwo.textContent = stampOne.textContent;
+  value.textContent = values[randValue];
+  stampStyles();
+}
+
+// 10 second timer to change card
+window.setInterval(function () {
+  resetCard();
+}, 10000);
+
+// Change card when click on button
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("btn")) {
-    randIcon = Math.floor(Math.random() * icons.length);
-    randValue = Math.floor(Math.random() * values.length);
-    stampOne.textContent = icons[randIcon];
-    stampTwo.textContent = stampOne.textContent;
-    value.textContent = values[randValue];
-    stampStyles();
+    resetCard();
   }
 });
