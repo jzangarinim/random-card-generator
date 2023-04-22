@@ -30,7 +30,7 @@ cont.insertBefore(value, stampTwo);
 
 function cardStyles() {
   // Card styles
-  cont.style.height = "60vh";
+  cont.style.height = "400px";
   //cont.style.minHeight = "270px";
   //cont.style.minWidth = "100px";
   cont.style.width = "250px";
